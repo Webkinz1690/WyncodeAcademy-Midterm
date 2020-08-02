@@ -1,24 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const HomePage = () => {
-  const [apiData, setApiData] = useState({});
+  const history = useHistory();
 
-  let { id } = useParams();
+  const handleNavigate = () => {
+    history.push('/search');
+  };
 
-  useEffect(() => {
-    console.log('I entered useEffect. Did it work?');
-
-    axios
-      .get(`https://api.coingecko.com/api/v3/coins/${id}`)
-      .then((response) => {
-        console.log(response.data.id);
-        setApiData(response.name);
-      });
-  }, [id]);
-
-  return <div>Home Page!</div>;
+  return (
+    <div>
+      <h1>This is the home page</h1>
+      <button onClick={handleNavigate}>Go to coin page</button>
+    </div>
+  );
 };
 
 export default HomePage;
