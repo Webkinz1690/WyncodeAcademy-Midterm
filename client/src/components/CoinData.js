@@ -1,18 +1,16 @@
 import React from 'react';
+import format from 'number-formatter';
 import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 
 const CoinData = ({ price, marketCap, img, name, symbol }) => {
   return (
-    <div className="shadow-box-example z-depth-5">
+    <>
       <Card
         variant="top"
         border="dark"
-        position="center"
         bg="dark"
         text="light"
-        style={{ width: 250, margin: 5, shadow: 'lg' }}
-        class="shadow-lg p-3 mb-5"
+        style={{ width: 200, margin: 5 }}
       >
         <Card.Img variant="top" src={img} alt={img} width={200} />
         <Card.Body>
@@ -20,17 +18,15 @@ const CoinData = ({ price, marketCap, img, name, symbol }) => {
           <span>Symbol: </span>
           {symbol}
           <div>
-            <span>Price: </span>${price}
+            <span>Price: </span>${format('#,##0.####', price)}
           </div>
           <div>
             <span>Market Cap: </span>
-            {marketCap}
-            {/* <Button variant="light" position="end" size="sm">Graph</Button> */}
+            {format('#,##0.####', marketCap)}
           </div>
         </Card.Body>
       </Card>
-    </div>
+    </>
   );
 };
-
 export default CoinData;

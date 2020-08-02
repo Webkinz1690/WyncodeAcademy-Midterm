@@ -1,37 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { Form } from 'react-bootstrap';
-import AllCoins from './AllCoins';
 import axios from 'axios';
-
+import { Form } from 'react-bootstrap';
+import CoinData from './CoinData';
 
 const SearchForm = () => {
   // states to keep track of:
   // the search term
-  const [search, setSearch] = useState('Bitcoin');
-
+  const [search, setSearch] = useState('ethereum');
   // the API results
   const [apiData, setApiData] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('is this thing on?');
-
     // Take the value of the input box and set the search state
     // "searchbar" was the ID of the input bar when we displayed
     // in the JSX below.
-    console.log(event.target.elements.searchbar.value);
+    // console.log(event.target.elements.searchbar.value);
     setSearch(event.target.elements.searchbar.value);
   };
 
- 
   useEffect(() => {
-    console.log('I entered useEffect. Did it work?');
-
     axios
       .get(`https://api.coingecko.com/api/v3/coins/${search}`)
       .then((response) => {
-        console.log(response.data.id);
-        setApiData(response.data.id);
+        console.log(response.data.market_data.current_price.usd);
+        setError(false);
+        setApiData({
+          name: response.data.name,
+          symbol: response.data.symbol,
+          price: response.data.market_data.current_price.usd,
+          marketCap: response.data.market_data.market_cap.usd,
+          img: response.data.image.large,
+          link: response.data.links.homepage[0]
+          // description: response.data.ico_data.short_desc
+        });
+      })
+      .catch((error) => {
+        console.log('an error happened', error);
+        setError(true);
       });
   }, [search]);
 
@@ -47,9 +54,20 @@ const SearchForm = () => {
           ></Form.Control>
         </Form.Row>
       </Form>
-      <AllCoins data={apiData} />
+      {error ? (
+        <p>An error occured, try searching for a valid coin</p>
+      ) : (
+        <CoinData
+          price={apiData.price}
+          marketCap={apiData.marketCap}
+          img={apiData.img}
+          // description={apiData.description}
+          name={apiData.name}
+          link={apiData.link}
+          symbol={apiData.symbol}
+        />
+      )}
     </>
   );
 };
-
 export default SearchForm;

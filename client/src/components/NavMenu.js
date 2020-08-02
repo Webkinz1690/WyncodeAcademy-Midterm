@@ -15,7 +15,7 @@ const NavMenu = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link style={{ color: '#fff' }} href="/coin" eventKey="link-1">
+        <Nav.Link style={{ color: '#fff' }} href="/search" eventKey="link-1">
           Coins
         </Nav.Link>
       </Nav.Item>
