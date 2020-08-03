@@ -1,9 +1,10 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import Coin from './components/Coin';
+import AboutCrypto from './components/AboutCrypto';
 import HomePage from './components/HomePage';
 import NavMenu from './components/NavMenu';
 import SearchForm from './components/SearchForm';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const CoinApp = () => {
@@ -12,8 +13,9 @@ const CoinApp = () => {
       <NavMenu />
       <Container>
         <Switch>
+          <Route path="/about" component={AboutCrypto} />
           <Route path="/search" component={SearchForm} />
-          <Route path="/" component={HomePage} />
+          <Route exact path="/" component={HomePage} />
         </Switch>
       </Container>
     </Router>
