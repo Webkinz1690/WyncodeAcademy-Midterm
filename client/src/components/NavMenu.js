@@ -1,7 +1,10 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import { useHistory } from 'react-router-dom';
+
 
 const NavMenu = () => {
+  
   return (
     <Nav
       style={{ backgroundColor: 'black' }}
@@ -20,12 +23,8 @@ const NavMenu = () => {
         </Nav.Link>
       </Nav.Item>
       <Nav.Item as="li">
-        <Nav.Link
-          style={{ color: '#fff' }}
-          href="/coinOfTheDay"
-          eventKey="link-2"
-        >
-          Coin of Day
+        <Nav.Link style={{ color: '#fff' }} href="/about" eventKey="link-2">
+          About Crypto
         </Nav.Link>
       </Nav.Item>
     </Nav>
