@@ -1,0 +1,109 @@
+body {
+  background-color: black;
+}
+#all {
+  display: flex;
+  height: 100vh;
+  width: 100wh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-family: 'Raleway';
+  color: white;
+  font-size: 3em;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+}
+#spin:before {
+  color: #00ff7f;
+  content: ' Bitcoin';
+  animation: animate infinite 6s;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes animate {
+  0% {
+    content: ' Bitcoin';
+  }
+  10% {
+    content: ' Ripple';
+  }
+  20% {
+    content: ' Ethereum';
+  }
+  30% {
+    content: ' Litecoin';
+  }
+  40% {
+    content: ' Tether';
+  }
+  50% {
+    content: ' LIBRA';
+  }
+  60% {
+    content: ' Bitcoin Cash';
+  }
+  70% {
+    content: ' Monero';
+  }
+  80% {
+    content: ' Binance';
+  }
+  90% {
+    content: ' EOS';
+  }
+  100% {
+    content: ' BSV';
+  }
+}
+h2 {
+  color: #30363d;
+  font-family: 'Dosis';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  background: #4caf50;
+  border: none;
+  font-size: 1em;
+  border-radius: 20px;
+  color: white;
+  cursor: crosshair;
+  letter-spacing: 0.2em;
+  outline: none;
+  padding: 0.5em 2em;
+  position: relative;
+  text-transform: uppercase;
+  margin: 1em;
+}
+button::before {
+  background: snow;
+  border-radius: inherit;
+  content: '';
+  filter: blur(10px);
+  opacity: 0.75;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+button:hover::before {
+  filter: blur(15px);
+  opacity: 1;
+}
+#buttonC {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
