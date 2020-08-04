@@ -1,0 +1,23 @@
+#searchbar {
+  border-style: none;
+  border: 0;
+}
+
+#mainsearchbar {
+  justify-content: center;
+}
+
+.jb {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  align-content: center;
+  width: 790px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+
+#h1 {
+  display: flex;
+  justify-content: center;
+}
