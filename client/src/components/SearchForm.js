@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Form } from 'react-bootstrap';
 import CoinData from './CoinData';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import '../SearchForm.css';
 
 const SearchForm = () => {
   // states to keep track of:
@@ -31,9 +33,7 @@ const SearchForm = () => {
           symbol: response.data.symbol,
           price: response.data.market_data.current_price.usd,
           marketCap: response.data.market_data.market_cap.usd,
-          img: response.data.image.large,
-          link: response.data.links.homepage[0]
-          // description: response.data.ico_data.short_desc
+          img: response.data.image.small
         });
       })
       .catch((error) => {
@@ -43,19 +43,30 @@ const SearchForm = () => {
   }, [search]);
 
   return (
-    <>
-      <Form onSubmit={handleSubmit}>
+    <div style={{ backgroundColor: 'black', height: '100vh' }}>
+      <Form
+        onSubmit={handleSubmit}
+        id="mainsearchbar"
+        className="mt-2 pt-3 d-flex"
+      >
         <Form.Row>
           <Form.Control
             id="searchbar"
             size="lg"
             type="text"
-            placeholder="Bitcoin"
+            placeholder="Search"
           ></Form.Control>
         </Form.Row>
       </Form>
       {error ? (
-        <p>An error occured, try searching for a valid coin</p>
+        <Jumbotron className="mt-5 jb" style={{ backgroundColor: '#4caf50' }}>
+          <h1 id="h1" style={{ color: 'white' }}>
+            Coin Not Found <span>👻</span>
+          </h1>
+          <p style={{ color: 'white' }}>
+            Coin not valid! Try searching again with the proper name...
+          </p>
+        </Jumbotron>
       ) : (
         <CoinData
           price={apiData.price}
@@ -63,11 +74,10 @@ const SearchForm = () => {
           img={apiData.img}
           // description={apiData.description}
           name={apiData.name}
-          link={apiData.link}
           symbol={apiData.symbol}
         />
       )}
-    </>
+    </div>
   );
 };
 export default SearchForm;
