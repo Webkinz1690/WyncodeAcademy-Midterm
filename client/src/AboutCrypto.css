@@ -1,0 +1,59 @@
+
+p.cryptotext {
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: left;
+  text-justify: inter-word;
+}
+p.aboutText {
+  display: flex;
+  flex-direction: column;
+  font-size: 11pt;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  text-align: center;
+  text-justify: inter-word;
+  letter-spacing: -0.5px;
+}
+h2.font-weight-light {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+}
+h4.font-weight-light {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18pt;
+  color: white;
+  text-align: center;
+  padding-top: 14pt;
+  padding-bottom: 5pt;
+}
+.h4title {
+  color: #00ff7f;
+  font-weight: 900;
+}
+.footer {
+  font-family: 'Dosis', sans-serif;
+}
+a.aboutcryptolink {
+  color: grey;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 10pt;
+}
+a.aboutcryptolink:hover {
+  color: #00ff7f;
+}
+.button-aboutcrypto {
+  font-family: 'Raleway', sans-serif;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.c {
+  margin: 0;
+  padding-bottom: 40px;
+  height: 10px;
+}
