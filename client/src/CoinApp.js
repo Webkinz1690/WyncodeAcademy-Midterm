@@ -14,8 +14,8 @@ const CoinApp = () => {
       <Router>
         <NavMenu />
         <Switch>
-          <Route path="/about" component={AboutCrypto} />
-          <Route path="/search" component={SearchForm} />
+          <Route exact path="/about" component={AboutCrypto} />
+          <Route exact path="/search" component={SearchForm} />
           <Route exact path="/" component={HomePage} />
         </Switch>
       </Router>
