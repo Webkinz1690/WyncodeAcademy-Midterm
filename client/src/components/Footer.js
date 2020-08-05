@@ -1,5 +1,5 @@
 import React from 'react';
-import '../AboutCrypto.css';
+import '../coinApp.css';
 
 function Footer() {
   return (
