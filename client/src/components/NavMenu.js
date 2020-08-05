@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import '../coinApp.css';
 // import { useHistory } from 'react-router-dom';
 
 const NavMenu = () => {
@@ -10,7 +11,7 @@ const NavMenu = () => {
       className="justify-content-start mt-1"
     >
       <Nav.Item as="li">
-        <Nav.Link style={{ color: '#00FF7F' }} href="/">
+        <Nav.Link style={{ color: '#00ff7f' }} href="/">
           <strong>Crypto App</strong>
         </Nav.Link>
       </Nav.Item>
