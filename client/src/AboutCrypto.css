@@ -20,6 +20,7 @@ p.aboutText {
 h2.font-weight-light {
   font-family: 'Raleway', sans-serif;
   color: white;
+  text-align: left;
 }
 h4.font-weight-light {
   font-family: 'Raleway', sans-serif;
@@ -56,3 +57,5 @@ a.aboutcryptolink:hover {
   padding-bottom: 40px;
   height: 10px;
 }
+
+

@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import '../AboutCrypto.css';
-
+// Comment
 const AboutCrypto = () => {
   return (
     <Container class="container-fluid">
