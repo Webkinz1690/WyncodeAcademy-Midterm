@@ -29,7 +29,7 @@ h4.font-weight-light {
   color: white;
   text-align: center;
   padding-top: 40pt;
-  padding-bottom: 0pt;
+  padding-bottom: 0;
 }
 .h4title {
   color: #00ff7f;
