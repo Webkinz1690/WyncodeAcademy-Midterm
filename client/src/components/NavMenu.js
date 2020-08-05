@@ -1,11 +1,12 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+
 import { useHistory } from 'react-router-dom';
+
 
 const NavMenu = () => {
   return (
     <Nav
-      style={{ backgroundColor: 'black' }}
       defaultActiveKey="/home"
       as="ul"
       className="justify-content-left"

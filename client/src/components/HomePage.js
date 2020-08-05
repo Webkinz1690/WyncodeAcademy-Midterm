@@ -1,14 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+
 import './HomePage.css';
+
 
 const HomePage = () => {
   const history = useHistory();
-
   const handleNavigate = () => {
     history.push('/search');
   };
-
   return (
     <div id="all">
       <div>
@@ -23,9 +23,11 @@ const HomePage = () => {
       </div>
       <div id="buttonC">
         <p></p>
+
         <button id="buttonShow" onClick={handleNavigate}>
           Get Started
         </button>
+
       </div>
     </div>
   );
