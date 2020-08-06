@@ -21,7 +21,9 @@ const HomePage = () => {
       </div>
       <div id="buttonC">
         <p></p>
-        <button onClick={handleNavigate}>Get Started</button>
+        <button id="buttonShow" onClick={handleNavigate}>
+          Get Started
+        </button>
       </div>
     </div>
   );
